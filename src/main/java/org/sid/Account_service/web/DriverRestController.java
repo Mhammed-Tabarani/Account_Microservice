@@ -20,8 +20,7 @@ public class DriverRestController {
     }
 
     @GetMapping("/drivers")
-    //public List<DriverResponseDTO> drivers(){return driverService.getAllDrivers();}
-    public List<Driver> drivers(){return driverRepository.findAll();}
+    public List<DriverResponseDTO> drivers(){return driverService.getAllDrivers();}
 
     @GetMapping("/drivers/{id}")
     public DriverResponseDTO getDriverByID(@PathVariable String id){

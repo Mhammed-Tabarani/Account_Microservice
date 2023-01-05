@@ -8,6 +8,7 @@ import org.sid.Account_service.entities.Passenger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -15,7 +16,6 @@ import java.util.UUID;
 public class PassengerMapper {
     public PassengerResponseDTO fromPassenger(Passenger passenger){
         PassengerResponseDTO passengerResponseDTO=new PassengerResponseDTO();
-        System.out.println(passenger);
         BeanUtils.copyProperties(passenger,passengerResponseDTO);
         return passengerResponseDTO;
     }
@@ -32,7 +32,7 @@ public class PassengerMapper {
         return passenger;
     }
     public List<PassengerResponseDTO> passengersToPassengerResponseDTOS(List<Passenger> passengers){
-        List<PassengerResponseDTO> passengerResponseDTOS = null;
+        List<PassengerResponseDTO> passengerResponseDTOS = new ArrayList<PassengerResponseDTO>();
         for (Passenger p:passengers
         ) { passengerResponseDTOS.add(fromPassenger(p));
 

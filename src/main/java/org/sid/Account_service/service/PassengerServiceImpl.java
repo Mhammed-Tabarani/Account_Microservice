@@ -56,7 +56,7 @@ public class PassengerServiceImpl implements PassengerService {
     }
 
     @Override
-    public List<PassengerResponseDTO> getAllPassengers() {
+    public List<PassengerResponseDTO> getAllPassengers() {System.out.println("Size"+passengerRepository.findAll().size());
         return passengerMapper.passengersToPassengerResponseDTOS(passengerRepository.findAll());
     }
 }

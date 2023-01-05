@@ -23,10 +23,11 @@ public class PassengerRestController {
     }
 
     @GetMapping("/passengers")
-    public List<PassengerResponseDTO> drivers(){return passengerService.getAllPassengers();}
+    public List<PassengerResponseDTO> passengers(){return passengerService.getAllPassengers();}
+   // public List<Passenger> drivers(){return passengerRepository.findAll();}
 
     @GetMapping("/passengers/{id}")
-    public PassengerResponseDTO driver(@PathVariable String id){
+    public PassengerResponseDTO passengers(@PathVariable String id){
         return passengerService.getPassengerByPublicId(id);
     }
     @PostMapping("/passengers")
