@@ -14,6 +14,5 @@ public class PassengerRequestDTO {
     private String email;
     private String phoneNumber;
     private String cin;
-    private String licenseNumber;
     private String password;
 }

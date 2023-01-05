@@ -27,7 +27,7 @@ public class PassengerRestController {
    // public List<Passenger> drivers(){return passengerRepository.findAll();}
 
 
-    @PostMapping("/passengers")
+    @PostMapping("/register/passengers")
     public PassengerResponseDTO save(@RequestBody PassengerRequestDTO passengerRequestDTO){
         return passengerService.addPassenger(passengerRequestDTO);
     }

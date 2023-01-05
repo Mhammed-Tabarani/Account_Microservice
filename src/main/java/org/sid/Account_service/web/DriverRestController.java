@@ -23,7 +23,7 @@ public class DriverRestController {
     public List<DriverResponseDTO> drivers(){return driverService.getAllDrivers();}
 
 
-    @PostMapping("/drivers")
+    @PostMapping("/register/drivers")
     public DriverResponseDTO save(@RequestBody DriverRequestDTO driverRequestDTO){
 
         return driverService.addDriver(driverRequestDTO);
