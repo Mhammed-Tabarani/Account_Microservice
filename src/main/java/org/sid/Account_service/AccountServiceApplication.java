@@ -26,20 +26,5 @@ public class AccountServiceApplication {
 		return  new RestTemplate();
 	}
 
-	@Bean
-	CommandLineRunner start(PassengerRepository passengerRepository , DriverRepository driverRepository){
-		return args -> {
 
-			passengerRepository.save(new Passenger(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"Mhammed","Tabarani","mhammed.tabarani@gmail.com",new Date(),"ooooooooooooooooooooooooooooooooo","0000000000","WA28888","1111111111"));
-			passengerRepository.save(new Passenger(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"Ayyoub","Ayyoub","ayyoub@gmail.com",new Date(),"aaaaaaaaaaaaaaaaaaaaaaaaaaa","1111111111","WA28888","1111111111"));
-			passengerRepository.save(new Passenger(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"Amine","Amine","amine@gmail.com",new Date(),"hhhhhhhhhhhhhhhhhhhhhhhh","22222222222","WA28888","1111111111"));
-			passengerRepository.save(new Passenger(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"raziq","raziq","raziq@gmail.com",new Date(),"zzzzzzzzzzzzzzzzzzzzzzzzzz","3333333333","WA28888","1111111111"));
-
-			driverRepository.save(new Driver(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"Mhammed","Tabarani","mhammed.tabarani@gmail.com",new Date(),"ooooooooooooooooooooooooooooooooo","0000000000","WA28888","zzzzzzzzzzzzzzzzzzz","1111111111"));
-			driverRepository.save(new Driver(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"Ayyoub","Ayyoub","ayyoub@gmail.com",new Date(),"aaaaaaaaaaaaaaaaaaaaaaaaaaa","1111111111","WA28888","zzzzzzzzzzzzzzzzzzz","1111111111"));
-			driverRepository.save(new Driver(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"Amine","Amine","amine@gmail.com",new Date(),"hhhhhhhhhhhhhhhhhhhhhhhh","22222222222","WA28888","zzzzzzzzzzzzzzzzzzz","1111111111"));
-			driverRepository.save(new Driver(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"raziq","raziq","raziq@gmail.com",new Date(),"zzzzzzzzzzzzzzzzzzzzzzzzzz","3333333333","WA28888","zzzzzzzzzzzzzzzzzzz","1111111111"));
-
-		};
-	}
 }
