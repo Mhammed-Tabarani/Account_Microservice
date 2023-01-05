@@ -26,27 +26,24 @@ public class PassengerRestController {
     public List<PassengerResponseDTO> passengers(){return passengerService.getAllPassengers();}
    // public List<Passenger> drivers(){return passengerRepository.findAll();}
 
-    @GetMapping("/passengers/{id}")
-    public PassengerResponseDTO passengers(@PathVariable String id){
-        return passengerService.getPassengerByPublicId(id);
-    }
+
     @PostMapping("/passengers")
     public PassengerResponseDTO save(@RequestBody PassengerRequestDTO passengerRequestDTO){
         return passengerService.addPassenger(passengerRequestDTO);
     }
 
-    @PutMapping("/passengers/{id}")
+    @PutMapping("/passengers/update/{id}")
     public PassengerResponseDTO update(@PathVariable String id , PassengerRequestDTO passengerRequestDTO){
         return passengerService.updatePassenger(id,passengerRequestDTO);
     }
-    @DeleteMapping("/passengers/{id}")
+    @DeleteMapping("/passengers/delete/{id}")
     public void delete(@PathVariable String id){passengerRepository.deleteById(id);}
-    @GetMapping("/Passengers/{email}")
+    @GetMapping("/Passengers/getbyemail/{email}")
     public PassengerResponseDTO getbyEmail(@PathVariable String email){
 
         return passengerService.getPassengerByEmail(email);
     }
-    @GetMapping("/passengers/{publicId}")
+    @GetMapping("/passengers/getbypublicid/{publicId}")
     public PassengerResponseDTO getbyPublicId(@PathVariable String publicId){
 
         return passengerService.getPassengerByPublicId(publicId);

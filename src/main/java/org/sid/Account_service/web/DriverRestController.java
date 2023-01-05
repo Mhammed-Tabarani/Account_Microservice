@@ -22,31 +22,28 @@ public class DriverRestController {
     @GetMapping("/drivers")
     public List<DriverResponseDTO> drivers(){return driverService.getAllDrivers();}
 
-    @GetMapping("/drivers/{id}")
-    public DriverResponseDTO getDriverByID(@PathVariable String id){
-        return driverService.getDriverById(id);
-    }
+
     @PostMapping("/drivers")
     public DriverResponseDTO save(@RequestBody DriverRequestDTO driverRequestDTO){
 
         return driverService.addDriver(driverRequestDTO);
     }
 
-    @PutMapping("/drivers/{id}")
+    @PutMapping("/drivers/update/{id}")
     public DriverResponseDTO update(@PathVariable String id , @RequestBody DriverRequestDTO driverRequestDTO){
 
         return driverService.updateDriver(id,driverRequestDTO);
     }
-    @DeleteMapping("/drivers/{id}")
+    @DeleteMapping("/drivers/delete/{id}")
     public void delete(@PathVariable String id){driverRepository.deleteById(id);}
 
-    @GetMapping("/drivers/{email}")
+    @GetMapping("/drivers/getbyemail/{email}")
     public DriverResponseDTO getbyEmail(@PathVariable String email){
 
         return driverService.getDriverByEmail(email);
     }
 
-    @GetMapping("/drivers/{publicId}")
+    @GetMapping("/drivers/getbypublicid/{publicId}")
     public DriverResponseDTO getByPublicId(@PathVariable String publicId){
 
         return driverService.getDriverByPublicId(publicId);
