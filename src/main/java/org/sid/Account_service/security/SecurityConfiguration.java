@@ -20,7 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests().antMatchers("/drivers/**").hasRole("DRIVER");
-        http.authorizeRequests().antMatchers("/passenger/**").hasRole("DRIVER");
+        http.authorizeRequests().antMatchers("/passenger/**").hasRole("PASSENGER");
         http.authorizeRequests().antMatchers("/register/passengers","/register/drivers").permitAll();
         http.authorizeRequests().anyRequest().authenticated();
         http.addFilterBefore(new AuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
