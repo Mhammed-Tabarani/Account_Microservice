@@ -38,7 +38,7 @@ public class PassengerRestController {
     }
     @DeleteMapping("/passengers/delete/{id}")
     public void delete(@PathVariable String id){passengerRepository.deleteById(id);}
-    @GetMapping("/Passengers/getbyemail/{email}")
+    @GetMapping("/passengers/getbyemail/{email}")
     public PassengerResponseDTO getbyEmail(@PathVariable String email){
 
         return passengerService.getPassengerByEmail(email);
