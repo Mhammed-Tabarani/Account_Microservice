@@ -17,4 +17,5 @@ public class DriverRequestDTO {
     private String cin;
     private String licenseNumber;
     private String password;
+    private String car;
 }

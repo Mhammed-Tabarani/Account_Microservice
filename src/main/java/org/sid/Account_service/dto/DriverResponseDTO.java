@@ -12,6 +12,11 @@ public class DriverResponseDTO {
     private String publicId;
     private String firstName;
     private String lastName;
+    private String profilePicture;
+    private Date birthday;
     private String email;
+    private String phoneNumber;
+    private String cin;
+    private String car;
 
 }
