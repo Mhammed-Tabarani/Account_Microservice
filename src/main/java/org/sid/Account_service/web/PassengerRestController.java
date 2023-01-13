@@ -33,9 +33,9 @@ public class PassengerRestController {
         return passengerService.addPassenger(passengerRequestDTO);
     }
 
-    @PutMapping("/passengers/update/{id}")
-    public PassengerResponseDTO update(@PathVariable String id , @RequestBody PassengerUpdateDTO passengerUpdateDTO){
-        return passengerService.updatePassenger(id,passengerUpdateDTO);
+    @PutMapping("/passengers/update/{email}")
+    public PassengerResponseDTO update(@PathVariable String email , @RequestBody PassengerUpdateDTO passengerUpdateDTO){
+        return passengerService.updatePassenger(email,passengerUpdateDTO);
     }
     @DeleteMapping("/passengers/delete/{id}")
     public void delete(@PathVariable String id){passengerRepository.deleteById(id);}

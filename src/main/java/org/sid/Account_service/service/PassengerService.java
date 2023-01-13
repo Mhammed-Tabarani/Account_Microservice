@@ -11,6 +11,6 @@ public interface PassengerService {
     PassengerResponseDTO getPassengerById(String id);
     PassengerResponseDTO getPassengerByPublicId(String publicId);
     PassengerResponseDTO getPassengerByEmail(String Email);
-    PassengerResponseDTO updatePassenger(String publicId, PassengerUpdateDTO passengerUpdateDTO);
+    PassengerResponseDTO updatePassenger(String email, PassengerUpdateDTO passengerUpdateDTO);
     List<PassengerResponseDTO> getAllPassengers();
 }

@@ -30,10 +30,10 @@ public class DriverRestController {
         return driverService.addDriver(driverRequestDTO);
     }
 
-    @PutMapping("/drivers/update/{id}")
-    public DriverResponseDTO update(@PathVariable String id , @RequestBody DriverUpdateDTO driverUpdateDTO){
+    @PutMapping("/drivers/update/{email}")
+    public DriverResponseDTO update(@PathVariable String email , @RequestBody DriverUpdateDTO driverUpdateDTO){
 
-        return driverService.updateDriver(id,driverUpdateDTO);
+        return driverService.updateDriver(email,driverUpdateDTO);
     }
     @DeleteMapping("/drivers/delete/{id}")
     public void delete(@PathVariable String id){driverRepository.deleteById(id);}

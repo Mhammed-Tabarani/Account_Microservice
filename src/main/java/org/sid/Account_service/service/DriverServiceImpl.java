@@ -54,9 +54,9 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public DriverResponseDTO updateDriver(String publicId, DriverUpdateDTO driverUpdateDTO) {
+    public DriverResponseDTO updateDriver(String email, DriverUpdateDTO driverUpdateDTO) {
 
-        Driver driver= driverRepository.findPDriverByPublicId(publicId);
+        Driver driver= driverRepository.findDriverByEmail(email);
         driver =driverMapper.update(driver,driverUpdateDTO);
         driverRepository.save(driver);
         return driverMapper.fromDriver(driver);

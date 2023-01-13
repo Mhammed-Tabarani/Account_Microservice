@@ -11,7 +11,7 @@ public interface DriverService {
     DriverResponseDTO getDriverById(String id);
     DriverResponseDTO getDriverByPublicId(String publicId);
     DriverResponseDTO getDriverByEmail(String Email);
-    DriverResponseDTO updateDriver(String publicId, DriverUpdateDTO driverUpdateDTO);
+    DriverResponseDTO updateDriver(String email, DriverUpdateDTO driverUpdateDTO);
     List<DriverResponseDTO> getAllDrivers();
 
 }

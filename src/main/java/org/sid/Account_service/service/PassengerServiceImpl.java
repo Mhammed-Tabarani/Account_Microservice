@@ -49,8 +49,8 @@ public class PassengerServiceImpl implements PassengerService {
     }
 
     @Override
-    public PassengerResponseDTO updatePassenger(String publicId, PassengerUpdateDTO passengerUpdateDTO) {
-        Passenger passenger= passengerRepository.findPassengerByPublicId(publicId);
+    public PassengerResponseDTO updatePassenger(String email, PassengerUpdateDTO passengerUpdateDTO) {
+        Passenger passenger= passengerRepository.findPassengerByEmail(email);
 
         passenger =passengerMapper.update(passenger,passengerUpdateDTO);
         passengerRepository.save(passenger);
