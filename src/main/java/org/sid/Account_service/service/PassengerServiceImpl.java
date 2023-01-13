@@ -2,6 +2,7 @@ package org.sid.Account_service.service;
 
 import org.sid.Account_service.dto.PassengerRequestDTO;
 import org.sid.Account_service.dto.PassengerResponseDTO;
+import org.sid.Account_service.dto.PassengerUpdateDTO;
 import org.sid.Account_service.entities.Passenger;
 import org.sid.Account_service.mappers.PassengerMapper;
 import org.sid.Account_service.repositories.PassengerRepository;
@@ -48,9 +49,10 @@ public class PassengerServiceImpl implements PassengerService {
     }
 
     @Override
-    public PassengerResponseDTO updatePassenger(String publicId, PassengerRequestDTO passengerRequestDTO) {
+    public PassengerResponseDTO updatePassenger(String publicId, PassengerUpdateDTO passengerUpdateDTO) {
         Passenger passenger= passengerRepository.findPassengerByPublicId(publicId);
-        passenger =passengerMapper.update(passenger,passengerRequestDTO);
+
+        passenger =passengerMapper.update(passenger,passengerUpdateDTO);
         passengerRepository.save(passenger);
         return passengerMapper.fromPassenger(passenger);
     }

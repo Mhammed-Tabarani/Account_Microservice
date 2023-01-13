@@ -3,6 +3,7 @@ package org.sid.Account_service.mappers;
 import org.sid.Account_service.dto.DriverResponseDTO;
 import org.sid.Account_service.dto.PassengerRequestDTO;
 import org.sid.Account_service.dto.PassengerResponseDTO;
+import org.sid.Account_service.dto.PassengerUpdateDTO;
 import org.sid.Account_service.entities.Driver;
 import org.sid.Account_service.entities.Passenger;
 import org.springframework.beans.BeanUtils;
@@ -26,9 +27,11 @@ public class PassengerMapper {
         passenger.setPublicId(UUID.randomUUID().toString());
         return passenger;
     }
-    public Passenger update(Passenger passenger , PassengerRequestDTO passengerRequestDTO){
+    public Passenger update(Passenger passenger , PassengerUpdateDTO passengerUpdateDTO){
 
-        BeanUtils.copyProperties(passengerRequestDTO,passenger);
+
+        BeanUtils.copyProperties(passengerUpdateDTO,passenger);
+        System.out.println(passenger);
         return passenger;
     }
     public List<PassengerResponseDTO> passengersToPassengerResponseDTOS(List<Passenger> passengers){

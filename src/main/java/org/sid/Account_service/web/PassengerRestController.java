@@ -2,6 +2,7 @@ package org.sid.Account_service.web;
 
 import org.sid.Account_service.dto.PassengerRequestDTO;
 import org.sid.Account_service.dto.PassengerResponseDTO;
+import org.sid.Account_service.dto.PassengerUpdateDTO;
 import org.sid.Account_service.entities.Passenger;
 import org.sid.Account_service.repositories.PassengerRepository;
 import org.sid.Account_service.service.PassengerService;
@@ -33,8 +34,8 @@ public class PassengerRestController {
     }
 
     @PutMapping("/passengers/update/{id}")
-    public PassengerResponseDTO update(@PathVariable String id , PassengerRequestDTO passengerRequestDTO){
-        return passengerService.updatePassenger(id,passengerRequestDTO);
+    public PassengerResponseDTO update(@PathVariable String id , @RequestBody PassengerUpdateDTO passengerUpdateDTO){
+        return passengerService.updatePassenger(id,passengerUpdateDTO);
     }
     @DeleteMapping("/passengers/delete/{id}")
     public void delete(@PathVariable String id){passengerRepository.deleteById(id);}

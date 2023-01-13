@@ -2,6 +2,7 @@ package org.sid.Account_service.service;
 
 import org.sid.Account_service.dto.DriverRequestDTO;
 import org.sid.Account_service.dto.DriverResponseDTO;
+import org.sid.Account_service.dto.DriverUpdateDTO;
 import org.sid.Account_service.entities.Driver;
 import org.sid.Account_service.mappers.DriverMapper;
 import org.sid.Account_service.repositories.DriverRepository;
@@ -53,11 +54,10 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public DriverResponseDTO updateDriver(String publicId, DriverRequestDTO driverRequestDTO) {
+    public DriverResponseDTO updateDriver(String publicId, DriverUpdateDTO driverUpdateDTO) {
 
         Driver driver= driverRepository.findPDriverByPublicId(publicId);
-
-        driver =driverMapper.update(driver,driverRequestDTO);
+        driver =driverMapper.update(driver,driverUpdateDTO);
         driverRepository.save(driver);
         return driverMapper.fromDriver(driver);
     }

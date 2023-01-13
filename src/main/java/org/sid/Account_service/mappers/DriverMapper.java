@@ -2,6 +2,7 @@ package org.sid.Account_service.mappers;
 
 import org.sid.Account_service.dto.DriverRequestDTO;
 import org.sid.Account_service.dto.DriverResponseDTO;
+import org.sid.Account_service.dto.DriverUpdateDTO;
 import org.sid.Account_service.entities.Driver;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
@@ -26,11 +27,10 @@ public class DriverMapper {
         return driver;
     }
 
-    public Driver update(Driver driver ,DriverRequestDTO driverRequestDTO){
+    public Driver update(Driver driver , DriverUpdateDTO driverUpdateDTO){
 
-        Driver driver1= new Driver();
-        BeanUtils.copyProperties(driverRequestDTO,driver1);
-
+        BeanUtils.copyProperties(driverUpdateDTO,driver);
+        System.out.println("Mapper"+driver);
         return driver;
     }
     

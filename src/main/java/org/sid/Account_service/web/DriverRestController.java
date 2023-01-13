@@ -2,6 +2,7 @@ package org.sid.Account_service.web;
 
 import org.sid.Account_service.dto.DriverRequestDTO;
 import org.sid.Account_service.dto.DriverResponseDTO;
+import org.sid.Account_service.dto.DriverUpdateDTO;
 import org.sid.Account_service.entities.Driver;
 import org.sid.Account_service.repositories.DriverRepository;
 import org.sid.Account_service.service.DriverService;
@@ -30,9 +31,9 @@ public class DriverRestController {
     }
 
     @PutMapping("/drivers/update/{id}")
-    public DriverResponseDTO update(@PathVariable String id , @RequestBody DriverRequestDTO driverRequestDTO){
+    public DriverResponseDTO update(@PathVariable String id , @RequestBody DriverUpdateDTO driverUpdateDTO){
 
-        return driverService.updateDriver(id,driverRequestDTO);
+        return driverService.updateDriver(id,driverUpdateDTO);
     }
     @DeleteMapping("/drivers/delete/{id}")
     public void delete(@PathVariable String id){driverRepository.deleteById(id);}

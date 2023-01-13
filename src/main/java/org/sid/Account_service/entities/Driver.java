@@ -1,6 +1,7 @@
 package org.sid.Account_service.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -22,6 +23,7 @@ public class Driver {
     private String phoneNumber;
     private String cin;
     private String licenseNumber;
+    @JsonFormat(pattern="yyyy-MM-dd")
     private String password;
     private String car;
 }
